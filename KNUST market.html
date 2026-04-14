@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KNUST Market</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <h1>KNUST Market</h1>
+</header>
+<main>
+  <section class="products">
+    <h2>Items</h2>
+    
+    <!-- 1. ANDROID CHARGER -->
+    <div class="item">
+      <img src="assets/ANDROID CHARGER.jpg" alt="Android Charger">
+      <details><summary>Android Charger</summary><p>Fast Charge - GH₵ 25</p></details>
+      <span class="price">GH₵ 25</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- 2. ELECTRIC IRON -->
+    <div class="item">
+      <img src="assets/ELECTRIC IRON.jpg" alt="Electric Iron">
+      <details><summary>Electric Iron</summary><p>Dry Iron - GH₵ 80</p></details>
+      <span class="price">GH₵ 80</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- 3. IPHONE CHARGER -->
+    <div class="item">
+      <img src="assets/IPHONE CHARGER.jpg" alt="iPhone Charger">
+      <details><summary>iPhone Charger</summary><p>Lightning - GH₵ 30</p></details>
+      <span class="price">GH₵ 30</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- 4. IPHONE XR -->
+    <div class="item">
+      <img src="assets/IPHONE XR.jpg" alt="iPhone XR">
+      <details><summary>iPhone XR</summary><p>64GB - GH₵ 1500</p></details>
+      <span class="price">GH₵ 1500</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- 5. JEANS -->
+    <div class="item">
+      <img src="assets/JEANS1.jpg" alt="Jeans">
+      <details><summary>Jeans</summary><p>Skinny - GH₵ 150</p><p>Straight - GH₵ 180</p></details>
+      <span class="price">GH₵ 150 - 180</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- 6. PC DELL -->
+    <div class="item">
+      <img src="assets/PC DELL.jpg" alt="Dell PC">
+      <details><summary>Dell PC</summary><p>Core i5 - GH₵ 2000</p></details>
+      <span class="price">GH₵ 2000</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- 8. SNEAKERS -->
+    <div class="item">
+      <img src="assets/SNEAKERS.jpg" alt="Sneakers">
+      <details><summary>Sneakers</summary><p>Size 40 - GH₵ 250</p><p>Size 42 - GH₵ 270</p></details>
+      <span class="price">GH₵ 250 - 270</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- 9. SUIT -->
+    <div class="item">
+      <img src="assets/SUIT2.jpg" alt="Suit">
+      <details><summary>Suit</summary><p>Black - GH₵ 400</p></details>
+      <span class="price">GH₵ 400</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+    <!-- 10. T-SHIRT -->
+    <div class="item">
+      <img src="assets/T-SHIRT.jpg" alt="T-Shirt">
+      <details><summary>T-Shirt</summary><p>Small - GH₵ 50</p><p>Large - GH₵ 70</p></details>
+      <span class="price">GH₵ 50 - 70</span>
+      <button class="add-to-cart">Add to Cart</button>
+    </div>
+
+  </section>
+</main>
+
+<!-- Delivery Modal -->
+<div id="modal">
+  <div class="modal-box">
+    <h3>Deliver to:</h3>
+    <button onclick="selectHall('Conti')">Conti</button>
+    <button onclick="selectHall('Africa')">Africa</button>
+    <button onclick="selectHall('Republic')">Republic</button>
+    <button onclick="closeModal()">Cancel</button>
+  </div>
+</div>
+
+<script>
+  let selectedItem = '';
+  
+  document.querySelectorAll('.add-to-cart').forEach(btn => {
+    btn.onclick = function() {
+      const item = this.closest('.item');
+      selectedItem = item.querySelector('summary').textContent;
+      document.getElementById('modal').style.display = 'block';
+    };
+  });
+
+  function selectHall(hall) {
+    alert(selectedItem + ' added to cart! Delivery: ' + hall);
+    closeModal();
+  }
+
+  function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>
